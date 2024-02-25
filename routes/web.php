@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +65,14 @@ Route::get('members',function(){
 Route::get('add-member',function(){
     return view('admin\add-member');
 })->name('add-member');
+
+
+
+// .....................login routes..................
+
+Route::get('userloginform',[UserController::class,'showloginform'])->name('admin');
+Route::get('login',[UserController::class,'login'])->name('login');
+Route::get('logout',[UserController::class,'logout'])->name('logout');
 
 
 
