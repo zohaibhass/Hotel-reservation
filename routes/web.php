@@ -42,6 +42,27 @@ Route::get('booking', function () {
     return view('booking');
 })->name('booking');
 
+// .................dashboard routes..................
+
+Route::get('dashboard',function(){
+    return view('admin.dashboard');
+})->name('dashboard');
+
+Route::get('services',function(){
+    return view('admin\services');
+})->name('services');
+
+Route::get('add_services',function(){
+    return view('admin\add_service');
+})->name('add_services');
+
+Route::get('members',function(){
+    return view('admin\members');
+})->name('members');
+
+Route::get('add-member',function(){
+    return view('admin\add-member');
+})->name('add-member');
 
 
 
