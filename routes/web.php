@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 /*
@@ -46,32 +50,44 @@ Route::get('booking', function () {
 
 // .................dashboard routes..................
 
-Route::get('dashboard',function(){
-    return view('admin.dashboard');
-})->name('dashboard');
+Route::middleware('auth')->group(function(){
 
-Route::get('services',function(){
-    return view('admin\services');
-})->name('services');
+    Route::get('dashboard',function(){
+        return view('admin.dashboard');
+    })->name('dashboard');
 
-Route::get('add_services',function(){
-    return view('admin\add_service');
-})->name('add_services');
+    Route::get('services',function(){
+        return view('admin\services');
+    })->name('services');
 
-Route::get('members',function(){
-    return view('admin\members');
-})->name('members');
+    Route::get('add_services',function(){
+        return view('admin\add_service');
+    })->name('add_services');
 
-Route::get('add-member',function(){
-    return view('admin\add-member');
-})->name('add-member');
+    Route::post('add_service',[ServiceController::class, 'add_service'])->name('add_service');
+
+    Route::get('members',function(){
+        return view('admin\members');
+    })->name('members');
+
+    Route::get('add-member',function(){
+        return view('admin\add-member');
+    })->name('add-member');
+
+});
+
 
 
 
 // .....................login routes..................
 
-Route::get('showloginform',[UserController::class,'showloginform'])->name('admin');
-Route::get('login',[UserController::class,'login'])->name('login');
+
+
+Route::get('admin',function(){
+    return view('auth\login');
+})->name('admin');
+
+Route::post('login',[UserController::class,'login'])->name('login');
 Route::get('logout',[UserController::class,'logout'])->name('logout');
 
 

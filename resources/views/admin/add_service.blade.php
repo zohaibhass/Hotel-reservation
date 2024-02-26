@@ -8,15 +8,15 @@
                 <strong>peaks platters</strong> <small>Add New Service</small>
             </div>
 
-                {{-- <div class="sufee-alert alert with-close alert-success mx-5 mt-3 alert-dismissible fade show">
+                <div class="sufee-alert alert with-close alert-success mx-5 mt-3 alert-dismissible fade show">
                     <span class="badge badge-pill badge-success">Success</span>
 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-                </div> --}}
+                </div>
 
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route }}" method="POST" enctype="multipart/form-data">
                 <div class="card-body row card-block">
                     @csrf
 

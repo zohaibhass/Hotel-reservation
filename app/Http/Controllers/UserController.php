@@ -11,9 +11,7 @@ class UserController extends Controller
 {
 
 
-    public function showloginform(){
-        return view('auth\login');
-    }
+
 
     public function login(Request $request){
 
@@ -34,7 +32,7 @@ class UserController extends Controller
         {
             Auth::logout();
 
-            return redirect('/');
+            return redirect()->route('home');
         }
 
 }
