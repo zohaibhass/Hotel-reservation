@@ -70,7 +70,7 @@ Route::get('add-member',function(){
 
 // .....................login routes..................
 
-Route::get('userloginform',[UserController::class,'showloginform'])->name('admin');
+Route::get('showloginform',[UserController::class,'showloginform'])->name('admin');
 Route::get('login',[UserController::class,'login'])->name('login');
 Route::get('logout',[UserController::class,'logout'])->name('logout');
 
