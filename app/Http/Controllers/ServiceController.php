@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\File;
 
 class ServiceController extends Controller
 {
@@ -11,8 +13,10 @@ class ServiceController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
-        //
+        $servicestable=Service::all();
+        return view('admin.services',['services'=>$servicestable]);
     }
 
     /**
@@ -20,7 +24,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.add_service');
     }
 
     /**
@@ -33,9 +37,23 @@ class ServiceController extends Controller
         $request->validate([
 
             'title'=>'required',
-            'image'=>''
+            'image'=>'image',
+            'description'=>'nullable',
 
         ]);
+
+        if($request->hasFile('image')){
+            $path=$request->file('image')->store('uploads','public');
+          }
+
+        Service::create([
+            'title'=>$request->input('title'),
+            'description'=>$request->input('description'),
+            'image'=>$path,
+        ]);
+
+        return back()->with('success','service add successfully');
+
     }
 
     /**
@@ -65,8 +83,21 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Service $service)
+    public function destroy(string $service)
     {
-        //
+        Service::where('id', $service)->delete();
+
+
+
+        return back()->with('success','deleted done');
     }
+
+
+    public function showservice(){
+
+        $show_Service=Service::all();
+        return view('services',['services_data'=>$show_Service]);
+    }
+
 }
+

@@ -7,16 +7,17 @@
             <div class="card-header">
                 <strong>peaks platters</strong> <small>Add New Service</small>
             </div>
+            @if (session('success'))
 
-                <div class="sufee-alert alert with-close alert-success mx-5 mt-3 alert-dismissible fade show">
-                    <span class="badge badge-pill badge-success">Success</span>
-
+                <div class="sufee-alert alert with-close alert-success mx-5 mt-3 alert-dismissible fade show" >
+                    <span class="badge badge-pill badge-success">added</span>
+                     {{ session('success') }}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-
-            <form action="{{ route }}" method="POST" enctype="multipart/form-data">
+                @endif
+        <form action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data">
                 <div class="card-body row card-block">
                     @csrf
 

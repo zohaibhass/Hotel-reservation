@@ -89,9 +89,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-globe"></i>Services</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-globe"></i><a href="{{ route('services') }}">Avaliable Services</a>
+                            <li><i class="menu-icon fa fa-globe"></i><a href="{{ route('services.index') }}">Avaliable Services</a>
                             </li>
-                            <li><i class="fa fa-plus-square"></i><a href="{{ route('add_services') }}">Add Service</a></li>
+                            <li><i class="fa fa-plus-square"></i><a href="{{ route('services.create') }}">Add Service</a></li>
 
                         </ul>
                     </li>

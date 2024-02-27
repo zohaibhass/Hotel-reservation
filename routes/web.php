@@ -27,9 +27,8 @@ Route::get('about', function () {
     return view('about');
 })->name('about');
 
-Route::get('service', function () {
-    return view('services');
-})->name('service');
+
+Route::get('service',[ServiceController::class, 'showservice'])->name('service');
 
 Route::get('room', function () {
     return view('room');
@@ -64,7 +63,7 @@ Route::middleware('auth')->group(function(){
         return view('admin\add_service');
     })->name('add_services');
 
-    Route::post('add_service',[ServiceController::class, 'add_service'])->name('add_service');
+    Route::resource('services', ServiceController::class);
 
     Route::get('members',function(){
         return view('admin\members');

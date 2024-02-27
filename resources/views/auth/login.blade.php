@@ -49,6 +49,7 @@
                         @csrf
 
 
+
                         <div class="form-group">
                             <label>Email address</label>
                             <input name='email' value="{{ old('email') }}" type="email"
