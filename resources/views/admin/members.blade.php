@@ -8,7 +8,7 @@
                 <strong class="card-title">Avaliable Members</strong>
             </div>
 
-            {{-- @if (session('success'))
+            @if (session('success'))
                 <div class=" mt-3 mx-2 -bottom-3sufee-alert alert with-close alert-success alert-dismissible fade show">
                     <span class="badge badge-pill badge-success">Success</span>
                     {{ session('success') }}
@@ -16,10 +16,8 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-            @endif --}}
-            {{-- @if (count($member_data) > 0) --}}
-
-
+            @endif
+            @if (count($members) > 0)
                 <div class="table-stats order-table ov-h">
                     <table class="table ">
                         <thead>
@@ -29,43 +27,42 @@
                                 <th>name</th>
                                 <th>posiion</th>
                                 <th>Adress</th>
+                                <th>Email</th>
                                 <th>Description</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($member_data as $member) --}}
+                            @foreach ($members as $member)
                                 <tr>
-                                    <td class="serial"></td>
+                                    <td class="serial">{{ $member->id }}</td>
                                     <td class="avatar">
                                         <div class="round-img">
                                             <a href="#"><img class="rounded-circle"
-                                                    src="" alt=""></a>
+                                                    src="{{ asset('storage/' . $member->image) }}" alt=""></a>
                                         </div>
                                     </td>
 
-                                    <td> <span class="name"></span> </td>
-                                    <td> <span class="product"></span></td>
+                                    <td> <span class="name">{{ $member->name }}</span> </td>
+                                    <td><span class="product">{{ $member->position }}</span> </td>
+                                    <td> <span class="product">{{ $member->adress }}</span></td>
                                     <td>
-
-                                        <span class="product"></span>
-
-
-                                    <td> <span class="product"></span> </td>
+                                        <span class="product">{{ $member->email }}</span>
+                                    </td>
 
 
-                                    <td>
-                                        <form action=""
-                                            method="GET" enctype="multipart/form-data" style="display: inline;">
+                                    <td><span class="product"> {{ $member->description }}</span></td>
+                                    <td class="row mt-5">
+                                        {{-- <form action="" method="GET" enctype="multipart/form-data"
+                                            style="display: inline;">
                                             @csrf
                                             @method('GET')
 
                                             <button type="submit" class="btn btn-outline-success"
                                                 onclick="return confirm('Are you sure you want to update this member?')">Update</button>
-                                        </form>
+                                        </form> --}}
 
-                                        <form action=""
-                                            method="POST" style="display: inline;">
+                                        <form action="{{ route('members.destroy',['member'=>$member->id]) }}" method="POST" style="display: inline;">
                                             @csrf
                                             @method('DELETE')
 
@@ -74,19 +71,19 @@
                                         </form>
                                     </td>
                                 </tr>
-                            {{-- @endforeach --}}
+                            @endforeach
 
                         </tbody>
                     </table>
-
-                    {{-- <div class="sufee-alert alert with-close alert-secondary mx-5 mt-5 alert-dismissible fade show">
+                @else
+                    <div class="sufee-alert alert with-close alert-secondary mx-5 mt-5 alert-dismissible fade show">
                         <span class="badge badge-pill badge-secondary">Empty</span>
                         there is not a Member.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
-                    </div> --}}
-
+                    </div>
+            @endif
         </div> <!-- /.table-stats -->
     </div>
     </div>

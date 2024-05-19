@@ -110,9 +110,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class=" menu-icon fa fa-users"></i>Members</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class=" menu-icon fa fa-users"></i><a href="{{ route('members') }}">Avlaiable Members</a>
+                            <li><i class=" menu-icon fa fa-users"></i><a href="{{ route('members.index') }}">Avlaiable Members</a>
                             </li>
-                            <li><i class="fa fa-plus-square"></i><a href="{{ route('add-member') }}">Add Member</a></li>
+                            <li><i class="fa fa-plus-square"></i><a href="{{ route('members.create') }}">Add Member</a></li>
                         </ul>
                     </li>
 

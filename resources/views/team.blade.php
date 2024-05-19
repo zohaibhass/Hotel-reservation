@@ -11,133 +11,30 @@
         </div>
         <div class="row g-4">
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                @foreach ($members as $member )
+
+
                 <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
+                    <div class="rounded position-relative">
+                        <img class="rounded-circle w-100 img-fluid" src="{{ asset('storage/'.$member->image) }}" style=" max-height:250px" alt="">
+
                     </div>
                     <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Full Name</h5>
-                        <small>Designation</small>
+                        <h5 class="fw-bold mb-0">{{ $member->name }}</h5>
+                        <i class="fa fa-google-plus"></i><b>{{ $member->email }}</b><br>
+                        <i class="fa fa-location-arrow"></i><b>{{ $member->adress }}</b><br>
+                        <a href="#star"><i class="fa fa-star"></i></a><b>{{ $member->position }}</b><br>
+                        <small>{{ $member->description}}</small>
                     </div>
                 </div>
+
+                @endforeach
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/team-2.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Full Name</h5>
-                        <small>Designation</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Full Name</h5>
-                        <small>Designation</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/team-4.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Full Name</h5>
-                        <small>Designation</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/team-2.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Full Name</h5>
-                        <small>Designation</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Full Name</h5>
-                        <small>Designation</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/team-4.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Full Name</h5>
-                        <small>Designation</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="rounded shadow overflow-hidden">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 mt-3">
-                        <h5 class="fw-bold mb-0">Full Name</h5>
-                        <small>Designation</small>
-                    </div>
-                </div>
-            </div>
+
+
+
+
+
         </div>
     </div>
 </div>

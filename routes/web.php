@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -35,9 +37,7 @@ Route::get('room', function () {
 
 })->name('room');
 
-Route::get('team', function () {
-    return view('team');
-})->name('team');
+Route::get('team',[MemberController::class, 'show_team'])->name('team');
 
 Route::get('contact', function () {
     return view('contact');
@@ -55,23 +55,9 @@ Route::middleware('auth')->group(function(){
         return view('admin.dashboard');
     })->name('dashboard');
 
-    Route::get('services',function(){
-        return view('admin\services');
-    })->name('services');
-
-    Route::get('add_services',function(){
-        return view('admin\add_service');
-    })->name('add_services');
-
     Route::resource('services', ServiceController::class);
+    Route::resource('members', MemberController::class);
 
-    Route::get('members',function(){
-        return view('admin\members');
-    })->name('members');
-
-    Route::get('add-member',function(){
-        return view('admin\add-member');
-    })->name('add-member');
 
 });
 

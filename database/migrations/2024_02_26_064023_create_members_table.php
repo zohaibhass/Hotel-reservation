@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('position');
             $table->string('email');
             $table->string('adress');
-            $table->integer('description');
-            $table->integer('image');
+            $table->string('description');
+            $table->string('image');
             $table->timestamps();
         });
     }
