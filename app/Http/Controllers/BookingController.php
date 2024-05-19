@@ -28,7 +28,22 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'customer_name'=>'required',
+            'email'=>'email|required',
+            'check_in'=>'required|date',
+            'check_out'=>'required|date',
+            'description'=>'requried'
+
+        ]);
+
+        Booking::create([
+           'customer_name'=>$request->input('customer_name'),
+           'email'=>$request->input('email'),
+           'check_in'=>$request->input('check_in'),
+           'check_out'=>$request->input('check_out'),
+           'description'=>$request->input('description')
+        ]);
     }
 
     /**
