@@ -76,7 +76,7 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-outline-danger"
+                                    <button type="submit" class="btn btn-sm btn-outline-danger"
                                         onclick="return confirm('Are you sure you want to delete this service?')">Delete</button>
                                 </form>
 
