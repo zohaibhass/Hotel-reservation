@@ -102,7 +102,8 @@
                             <li><i class="fa fa-building-o"></i><a href="">Avaliable Rooms
                                     </a></li>
                             <li><i class="fa fa-plus-square"></i><a href="">Add Room</a></li>
-                            <li><i class="fa fa-bars"></i><a href="">Room Type</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{route('roomtype.index')}}">Room Type</a></li>
+
                             {{-- <li><i class="fa fa-plus-square"></i><a href=""></a></li> --}}
                         </ul>
                     </li>

@@ -10,4 +10,12 @@ class Member extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'image', 'email','adress','position', 'description'];
+
+
+    // public function getEmailAttribute($value){
+    //     return strtolower($value);
+    // }
+    public function setEmailAttribute($value){
+        $this->attributes['email']=strtolower($value);
+    }
 }

@@ -13,4 +13,6 @@ class Roomtype extends Model
     {
         return $this->hasMany(Room::class);
     }
+
+    protected $guarded=[];
 }

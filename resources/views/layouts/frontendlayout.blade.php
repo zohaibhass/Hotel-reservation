@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Hotelier - Hotel HTML Template</title>
+    <title>Rupal in</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -41,9 +41,9 @@
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <a href="index.html"
+                    <a href="#"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase">Hotelier</h1>
+                        <h1 class="m-0 text-primary text-uppercase">Rupal In</h1>
                     </a>
                 </div>
                 <div class="col-lg-9">
@@ -70,7 +70,7 @@
                     </div>
                     <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
                         <a href="index.html" class="navbar-brand d-block d-lg-none">
-                            <h1 class="m-0 text-primary text-uppercase">Hotelier</h1>
+                            <h1 class="m-0 text-primary text-uppercase">Rupal In Resort</h1>
                         </a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
                             data-bs-target="#navbarCollapse">
@@ -78,12 +78,13 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
-                                <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
-                                <a href="{{ route('service') }}" class="nav-item nav-link">Services</a>
-                                <a href="{{ route('room') }}" class="nav-item nav-link">Rooms</a>
-                                <a href="{{ route('team') }}" class="nav-item nav-link">team</a>
-                                <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
+                                <a href="{{ route('home') }}" class="nav-item nav-link{{request()->routeis('home') ? ' active':''}}">Home</a>
+
+                                <a href="{{ route('service') }}" class="nav-item nav-link{{ request()->routeis('service')? ' active':'' }}">Services</a>
+                                <a href="{{ route('room') }}" class="nav-item nav-link{{ request()->routeis('room')?' active':'' }}">Rooms</a>
+                                <a href="{{ route('team') }}" class="nav-item nav-link{{ request()->routeis('team')?' active':'' }}">team</a>
+                                <a href="{{ route('about') }}" class="nav-item nav-link{{ request()->routeis('about')?' active':'' }}">About</a>
+                                <a href="{{ route('contact') }}" class="nav-item nav-link{{ request()->routeis('contact php')?' active':'' }}">Contact</a>
                             </div>
                         </div>
                     </nav>
@@ -107,7 +108,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="bg-primary rounded p-4">
                             <a href="index.html">
-                                <h1 class="text-white text-uppercase mb-3">Hotelier</h1>
+                                <h1 class="text-white text-uppercase mb-3">Rupal in resort</h1>
                             </a>
                             <p class="text-white mb-0">
                                 Download <a class="text-dark fw-medium"
@@ -162,7 +163,9 @@
                             &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
 
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://www.linkedin.com/in/zohaib-hassan-811310252/">design and developed by Zohaib Hassan</a>
+                            Designed By <a class="border-bottom"
+                                href="https://www.linkedin.com/in/zohaib-hassan-811310252/">design and developed by
+                                Zohaib Hassan</a>
                         </div>
 
                     </div>

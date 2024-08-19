@@ -12,7 +12,8 @@ class RoomtypeController extends Controller
      */
     public function index()
     {
-        //
+       $roomTypes=Roomtype::all();
+       return view('admin.roomtype',['roomTypes'=>$roomTypes]);
     }
 
     /**
@@ -20,7 +21,7 @@ class RoomtypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.add_room_type');
     }
 
     /**
@@ -28,7 +29,17 @@ class RoomtypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'description'=>'nullable'
+        ]);
+
+        Roomtype::create([
+            'title'=>$request->input('title'),
+            'description'=>$request->input('description')
+        ]);
+
+        return back()->with('success',"room type added successfully");
     }
 
     /**
@@ -58,8 +69,9 @@ class RoomtypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Roomtype $roomtype)
+    public function destroy(string $roomType)
     {
-        //
+        Roomtype::where('id',$roomType)->delete();
+        return back()->with('success','type deleted');
     }
 }

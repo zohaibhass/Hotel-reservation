@@ -11,7 +11,7 @@ class Room extends Model
 
     public function roomtype()
     {
-        return $this->belongsTo(Roomtype::class);
+        return $this->hasOne(Roomtype::class);
     }
 
     public function booking()

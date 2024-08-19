@@ -5,7 +5,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\RoomtypeController;
 
 
 
@@ -57,6 +57,7 @@ Route::middleware('auth')->group(function(){
 
     Route::resource('services', ServiceController::class);
     Route::resource('members', MemberController::class);
+    Route::resource('roomtype', RoomtypeController::class);
 
 
 });
